@@ -1,0 +1,102 @@
+# ============ 安全：API Key / 密钥 / 配置文件 ============
+.env
+.env.*
+*.env
+config.local.*
+*.key
+*.pem
+credentials.*
+secrets.*
+**/secrets/**
+**/credentials/**
+settings_local.py
+config_local.py
+
+# ============ 数据：大文件 / 原始数据 / 缓存 ============
+data/raw/*
+data/processed/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+*.csv
+*.xlsx
+*.xls
+*.json
+*.parquet
+*.h5
+*.hdf5
+*.db
+*.sqlite
+*.sqlite3
+*.pkl
+*.pickle
+data/*.zip
+data/*.tar.gz
+data/*.rar
+
+# ============ Python ============
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+*.egg
+.eggs/
+*.whl
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+
+# ============ Jupyter Notebook 输出 ============
+.ipynb_checkpoints/
+*.nb convert
+
+# ============ 环境 / 虚拟环境 ============
+venv/
+.venv/
+virtualenv/
+env/
+myenv/
+env*/
+
+# ============ IDE / 编辑器 ============
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.user
+*.userosscache
+*.sln.docstates
+
+# ============ 模型文件 ============
+*.model
+*.joblib
+model_weights/
+models/**/*.h5
+models/**/*.pt
+
+# ============ 项目文件（原文档，保留在本地即可） ============
+2026-大数据-二级项目/
+__MACOSX/
+*.doc
+*.docx
+!大数据分析实践-设计项目报告模板.doc
+!会议记录-模版.doc
+
+# ============ 日志 / 输出 ============
+*.log
+output/
+logs/
