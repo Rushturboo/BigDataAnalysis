@@ -45,7 +45,7 @@ BigDataAnalysis/
 
 ```bash
 # 克隆仓库
-git clone https://github.com/[你的用户名]/BigDataAnalysis.git
+git clone https://github.com/Rushturboo/BigDataAnalysis.git
 
 # 创建虚拟环境
 python -m venv venv
