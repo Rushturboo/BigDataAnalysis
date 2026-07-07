@@ -1,6 +1,6 @@
 # BigDataAnalysis
 
-> BDT4864A 大数据分析实践 — 基于机器学习的大数据分析与可视化
+> BDT4864A 大数据分析实践 — AD 分亚型：基于 MSBB 转录组数据的无监督聚类与可视化
 
 ## 📋 项目信息
 
@@ -9,37 +9,49 @@
 | 课程     | BDT4864A 大数据分析实践 |
 | 指导教师 | 陈亮、汪飞              |
 | 周期     | 2026.07.06 - 2026.07.20 |
-| 选题     | [待确定]                |
+| 选题     | AD（阿尔茨海默病）分亚型 |
+| 数据来源 | MSBB (Mount Sinai Brain Bank) / AMP-AD 联盟 |
 
-## 👥 组员
-
-| 姓名   | 角色 | 分工 |
-| ------ | ---- | ---- |
-| 吴彦弘 | 组长 |      |
-| 陆嘉怡 | 组员 |      |
-| 全芷莹 | 组员 |      |
-| 黄家强 | 组员 |      |
-| 陈泓旭 | 组员 |      |
 
 ## 📁 目录结构
 
 ```
 BigDataAnalysis/
-├── data/                  # 数据文件
-│   ├── raw/              # 原始数据（不上传Git）
-│   └── processed/        # 处理后数据（不上传Git）
-├── notebooks/            # Jupyter Notebooks
-├── src/                  # 源代码
+├── data/                     # 数据文件
+│   ├── raw/                 # 原始数据（不上传Git）
+│   └── processed/           # 处理后数据（不上传Git）
+├── notebooks/               # Jupyter Notebooks
+│   ├── 01_eda.ipynb         # 数据探索
+│   ├── 02_preprocessing.ipynb  # 预处理验证
+│   ├── 03_clustering_3d.ipynb  # 图1：3D聚类散点图
+│   ├── 04_volcano.ipynb     # 图2：火山图
+│   └── 05_network.ipynb     # 图3：共表达网络图
+├── src/                     # 源代码
 │   ├── data_preprocessing/  # 数据预处理
 │   ├── analysis/            # 分析与建模
-│   └── visualization/       # 可视化
-├── reports/              # 报告文档
-├── docs/                 # 项目文档
-├── models/               # 训练好的模型
-├── requirements.txt      # Python 依赖
+│   │   ├── clustering.py    # 图1：PCA→UMAP→KMeans
+│   │   ├── differential.py  # 图2：差异表达分析
+│   │   └── network.py       # 图3：共表达网络
+│   ├── visualization/       # 可视化
+│   │   ├── scatter3d.py     # 图1：3D聚类散点图
+│   │   ├── volcano.py       # 图2：火山图
+│   │   └── network_viz.py   # 图3：3D网络图
+│   └── utils/
+│       └── config.py        # 公共路径/常量
+├── outputs/figures/         # 图表输出
+├── docs/                    # 项目文档
+├── requirements.txt         # Python 依赖
 ├── .gitignore
 └── README.md
 ```
+
+## 🔬 三张核心图
+
+| 图 | 内容 | 分析方法 | 可视化 |
+|---|---|---|---|
+| 图 1 | 3D 聚类散点图 | PCA → UMAP → K-means | Plotly 3D 交互 |
+| 图 2 | 火山图 | 亚型间 t-test 差异表达 | Plotly 标注 |
+| 图 3 | 基因共表达网络 | 相关矩阵 → WGCNA 模块 | Plotly 3D 网络 |
 
 ## 🚀 快速开始
 
