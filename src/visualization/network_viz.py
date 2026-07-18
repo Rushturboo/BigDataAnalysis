@@ -201,7 +201,7 @@ def plot_network_3d(
                 hub_label_list.append(f"M{mod_label[-1] if mod_label != 'M_grey' else 'grey'}: {gene_name}")
 
         fig.add_annotation(
-            x=0.01, y=0.99, xref="paper", yref="paper",
+            x=0.99, y=0.99, xref="paper", yref="paper",
             text="<b>Top Hub Genes</b><br>" + "<br>".join(hub_label_list),
             showarrow=False,
             font=dict(size=10, color="white"),
@@ -209,6 +209,7 @@ def plot_network_3d(
             bordercolor="gray",
             borderwidth=1,
             align="left",
+            xanchor="right",
         )
 
     # ── 布局 ──
