@@ -198,7 +198,7 @@ def plot_network_3d(
         hub_label_list = []
         for mod_label in sorted(kme_hubs.keys()):
             for gene_name, kme in kme_hubs[mod_label][:3]:  # top 3 per module
-                hub_label_list.append(f"M{mod_label[-1] if mod_label != 'M_grey' else 'grey'}: {gene_name}")
+                hub_label_list.append(f"{mod_label if mod_label != 'M_grey' else 'grey'}: {gene_name}")
 
         fig.add_annotation(
             x=0.99, y=0.99, xref="paper", yref="paper",
