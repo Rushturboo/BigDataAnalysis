@@ -120,18 +120,9 @@ def plot_volcano(
             )
         )
 
-    label_candidates = df[df["significant"]].copy() if "significant" in df.columns else df.copy()
-    if label_candidates.empty:
-        label_candidates = df.copy()
+    label_candidates = df.nlargest(top_n, "abs_log2FC")
 
-    label_candidates = pd.concat(
-        [
-            label_candidates.nlargest(top_n, "abs_log2FC"),
-            highlight_df,
-        ]
-    ).drop_duplicates(subset="gene")
-
-    label_df = label_candidates.head(top_n + len(highlight_df))
+    label_df = label_candidates.head(top_n)
     fig.add_trace(
         go.Scatter(
             x=label_df["log2FC"],
